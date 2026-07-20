@@ -1,0 +1,31 @@
+# Homebrew cask template for LithePG releases. The production release helper
+# publishes a signed and notarized artifact. The separate preview helper adds a
+# visible unsigned-build warning to the copy published in the external tap.
+
+cask "lithepg" do
+  version "1.0.1-preview.1"
+  sha256 "3c0ec308bd78aad4797c42662b828d2fb1bea733e3f5995af3bc1500cd44311d"
+
+  url "https://github.com/omarpr/lithepg/releases/download/v#{version}/LithePG.app.zip",
+      verified: "github.com/omarpr/lithepg/"
+  name "LithePG"
+  desc "Lean PostgreSQL client with local-first AI"
+  homepage "https://www.lithepg.app/"
+
+  depends_on macos: :sonoma
+
+  app "LithePG.app"
+
+  uninstall quit: "dev.omarpr.lithepg"
+
+  zap trash: [
+    "~/Library/Application Support/LithePG",
+    "~/Library/Preferences/dev.omarpr.lithepg.plist",
+  ]
+
+  caveats <<~EOS
+    This preview build uses ad-hoc signing and is not notarized by Apple.
+    After the first blocked launch, open:
+      System Settings -> Privacy & Security -> Open Anyway
+  EOS
+end
