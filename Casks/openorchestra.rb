@@ -7,8 +7,7 @@ cask "openorchestra" do
   version "1.0.0"
   sha256 "f0382bb4fdf09493817cd20fc968c180664768b2224fc7bb4ee572fcf5623921"
 
-  url "https://github.com/omarpr/openorchestra/releases/download/v#{version}/openOrchestra-#{version}-universal.dmg",
-      verified: "github.com/omarpr/openorchestra/"
+  url "https://github.com/omarpr/openorchestra/releases/download/v#{version}/openOrchestra-#{version}-universal.dmg"
   name "openOrchestra"
   desc "Native workspace for running coding agents in parallel git worktrees"
   homepage "https://github.com/omarpr/openorchestra"
