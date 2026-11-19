@@ -4,8 +4,8 @@
 # Release tags are `v<version>` (see script/package-mac.sh).
 
 cask "openorchestra" do
-  version "1.1.0"
-  sha256 "f646922a216d9fde801e2beb0d16e18cef06459c570b775e9f92e79686c3c1e4"
+  version "1.2.0"
+  sha256 "2191a24240c7ada56f11e18fba9577f793435ca1d2e9ed370c40765dc5225029"
 
   url "https://github.com/omarpr/openorchestra/releases/download/v#{version}/openOrchestra-#{version}-universal.dmg"
   name "openOrchestra"
